@@ -3,12 +3,12 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
 syntax enable
 set paste
 set hidden
-call pathogen#infect()
 
 set tabstop=4
 set expandtab
 set shiftwidth=4
 set shiftround
+set clipboard=unnamed
 
 " Tab completion
 set wildmode=longest,list,full
@@ -82,3 +82,5 @@ endfunction
 
 let pyindent_nested_paren="&sw*2"
 let pyindent_open_paren="&sw*2"
+
+call pathogen#infect()
