@@ -53,7 +53,6 @@ setlocal indentexpr=GetGooglePythonIndent(v:lnum)
 let s:maxoff = 50 " maximum number of lines to look backwards.
 
 function GetGooglePythonIndent(lnum)
-
   " Indent inside parens.
   " Align with the open paren unless it is at the end of the line.
   " E.g.
@@ -77,7 +76,6 @@ function GetGooglePythonIndent(lnum)
 
   " Delegate the rest to the original function.
   return GetPythonIndent(a:lnum)
-
 endfunction
 
 let pyindent_nested_paren="&sw*2"
