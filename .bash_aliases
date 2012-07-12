@@ -11,7 +11,13 @@ WHITE="\[\033[37;1m\]"
 BLUE="\[\033[34m\]"
 GREEN="\[\033[32m\]"
 
-PS1="${RESET}${GREEN}\u@\h${BLUE}\w${WHITE}> "
+PS1="${RESET}${GREEN}\u@\h${BLUE}\w${NORMAL}> "
+
+HISTCONTROL=ignoredups
+HISTCONTROL=ignoreboth
+HISTFILESIZE=10000 
+HISTSIZE=100
+HISTCONTROL=ignorespace
 
 # .bash_local will be git ignored
 if [ -f ~/.bash_local ]; then
