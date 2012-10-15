@@ -4,6 +4,8 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
+let g:Powerline_symbols = 'fancy'
+
 set nocompatible
 set modelines=0
 set viminfo='20,\"1000
@@ -68,3 +70,15 @@ autocmd filetype html setlocal ts=2 sts=2 sw=2
 autocmd filetype css setlocal ts=2 sts=2 sw=2
 autocmd filetype sass setlocal ts=2 sts=2 sw=2
 autocmd filetype scss setlocal ts=2 sts=2 sw=2
+
+" So vim knows a django file vs python
+nnoremap _dt :set ft=htmldjango<CR>
+nnoremap _pd :set ft=python.django<CR>
+
+au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+au BufNewFile,BufRead admin.py     setlocal filetype=python.django
+au BufNewFile,BufRead urls.py      setlocal filetype=python.django
+au BufNewFile,BufRead models.py    setlocal filetype=python.django
+au BufNewFile,BufRead views.py     setlocal filetype=python.django
+au BufNewFile,BufRead settings.py  setlocal filetype=python.django
+au BufNewFile,BufRead forms.py     setlocal filetype=python.django
