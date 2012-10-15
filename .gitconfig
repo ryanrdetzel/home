@@ -32,3 +32,5 @@
     br = branch
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 
+[status]
+	showUntrackedFiles = no
