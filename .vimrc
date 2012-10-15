@@ -1,39 +1,12 @@
-set nocompatible
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME
 syntax enable
-set paste
-set hidden
 
-set tabstop=4
-set expandtab
-set shiftwidth=4
-set shiftround
-set clipboard=unnamed
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
+set nocompatible
+set modelines=0
 set viminfo='20,\"1000
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-
-" Tab completion
-set wildmode=longest,list,full
-set wildmenu
-set backspace=2
-
-set viminfo='20,\"1000
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
-filetype plugin on
-
-set hlsearch        " highlight matches
-set incsearch       " incremental searching
-set ignorecase      " searches are case insensitive...
-set smartcase       " case sensetive if search string contains capital letter
-
-" adds the line numbers
-set rnu
-au InsertEnter * :set nu
-au InsertLeave * :set rnu
-au FocusLost * :set nu
-au FocusGained * :set rnu
 
 " disable the arrows so I don't use them
 noremap  <Up> ""
@@ -52,37 +25,46 @@ set laststatus=2
 set colorcolumn=81                           " line to show 81 character mark
 set cursorline                               " shows the horizontal cursor line
 
-" Indent Python in the Google way.
-setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-let s:maxoff = 50 " maximum number of lines to look backwards.
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
-function GetGooglePythonIndent(lnum)
-  " Indent inside parens.
-  " Align with the open paren unless it is at the end of the line.
-  " E.g.
-  "   open_paren_not_at_EOL(100,
-  "                         (200,
-  "                          300),
-  "                         400)
-  "   open_paren_at_EOL(
-  "       100, 200, 300, 400)
-  call cursor(a:lnum, 1)
-  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
-        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
-        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
-        \ . " =~ '\\(Comment\\|String\\)$'")
-  if par_line > 0
-    call cursor(par_line, 1)
-    if par_col != col("$") - 1
-      return par_col
-    endif
-  endif
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set paste
+set backspace=indent,eol,start
+set laststatus=2
+set relativenumber
+set undofile
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+set smarttab      " insert tabs on the start of a line
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't 
 
-  " Delegate the rest to the original function.
-  return GetPythonIndent(a:lnum)
-endfunction
+" Show invisible chars
+set list
+set listchars=tab:▸\ ,eol:¬
 
-"let pyindent_nested_paren="&sw*2"
-" let pyindent_open_paren="&sw*2"
-
-call pathogen#infect()
+autocmd filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd filetype html setlocal ts=2 sts=2 sw=2
+autocmd filetype css setlocal ts=2 sts=2 sw=2
+autocmd filetype sass setlocal ts=2 sts=2 sw=2
+autocmd filetype scss setlocal ts=2 sts=2 sw=2
