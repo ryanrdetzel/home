@@ -24,3 +24,11 @@
     frag = magenta bold
     old = red bold
     new = green bold
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+

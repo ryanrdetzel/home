@@ -10,11 +10,15 @@ set shiftwidth=4
 set shiftround
 set clipboard=unnamed
 
+set viminfo='20,\"1000
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+
 " Tab completion
 set wildmode=longest,list,full
 set wildmenu
 set backspace=2
 
+set viminfo='20,\"1000
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 filetype plugin on
@@ -78,7 +82,7 @@ function GetGooglePythonIndent(lnum)
   return GetPythonIndent(a:lnum)
 endfunction
 
-let pyindent_nested_paren="&sw*2"
-let pyindent_open_paren="&sw*2"
+"let pyindent_nested_paren="&sw*2"
+" let pyindent_open_paren="&sw*2"
 
 call pathogen#infect()
