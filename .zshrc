@@ -32,6 +32,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Customize to your needs...
 export PATH=/opt/jdk1.6.0_26/bin/:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/home/ryan/gsutil
