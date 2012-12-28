@@ -66,6 +66,7 @@ set listchars=tab:▸\ ,eol:¬
 
 autocmd filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd filetype html setlocal ts=2 sts=2 sw=2
+autocmd filetype htmldjango setlocal ts=2 sts=2 sw=2
 autocmd filetype css setlocal ts=2 sts=2 sw=2
 autocmd filetype sass setlocal ts=2 sts=2 sw=2
 autocmd filetype scss setlocal ts=2 sts=2 sw=2
