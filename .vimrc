@@ -82,4 +82,12 @@ autocmd filetype scss setlocal ts=2 sts=2 sw=2
 "au BufNewFile,BufRead views.py     setlocal filetype=python.django
 "au BufNewFile,BufRead settings.py  setlocal filetype=python.django
 "au BufNewFile,BufRead forms.py     setlocal filetype=python.django
+
+" Uncomment the following to have Vim jump to the last position when                                                       
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
 set paste
