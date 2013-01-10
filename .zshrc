@@ -37,5 +37,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Customize to your needs...
 export PATH=/opt/jdk1.6.0_26/bin/:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/home/ryan/gsutil
 
-alias push='git push origin master && git push upstream master'
-alias start='cd /home/ryan/CustomMade && sudo /usr/bin/python manage.py runserver 10.215.86.3:88'
+alias rake="noglob rake"
