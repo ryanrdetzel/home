@@ -2,3 +2,8 @@ My home directory files.
 
 sudo apt-get update && sudo apt-get install zsh
 chsh -s /bin/zsh
+
+
+sudo apt-add-repository ppa:blueyed/ppa
+sudo apt-get update
+sudo apt-get upgrade
