@@ -20,6 +20,9 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
+imap ii <Esc>
+imap jj <Esc>
+
 set laststatus=2    
 
 :iabbrev @@  ryandetzel@gmail.com 
@@ -90,4 +93,8 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-set paste
+set nobackup
+set noswapfile
+set ruler
+"autocmd BufWritePost *.py call Flake8()
+"autocmd filetype python compiler pylint
