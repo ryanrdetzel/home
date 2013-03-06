@@ -20,8 +20,8 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-imap ii <Esc>
-imap jj <Esc>
+"imap ii <Esc>
+"imap jj <Esc>
 
 set laststatus=2    
 
@@ -29,7 +29,7 @@ set laststatus=2
 
 set colorcolumn=81                           " line to show 81 character mark
 set cursorline                               " shows the horizontal cursor line
-
+set pastetoggle=<F2>
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -37,7 +37,7 @@ set expandtab
 
 set encoding=utf-8
 set scrolloff=3
-set autoindent
+"set autoindent
 set showmode
 set showcmd
 set hidden
@@ -98,3 +98,5 @@ set noswapfile
 set ruler
 "autocmd BufWritePost *.py call Flake8()
 "autocmd filetype python compiler pylint
+"
+set rtp+=/home/talkto/env/lib/python2.7/site-packages/powerline/bindings/vim
