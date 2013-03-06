@@ -1,9 +1,20 @@
 My home directory files.
 
+
+Notes for myself.
+-----------------
+
 sudo apt-get update && sudo apt-get install zsh
 chsh -s /bin/zsh
 
-
+Newest Vim
 sudo apt-add-repository ppa:blueyed/ppa
 sudo apt-get update
 sudo apt-get upgrade
+
+
+pip install powerline
+pip install pyflakes
+
+
+
