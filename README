@@ -13,7 +13,14 @@ sudo apt-get update
 sudo apt-get upgrade
 
 
-pip install powerline
+Install powerline from source
+https://github.com/Lokaltog/powerline.git
+
+* Change .vimrc line to point to the bundle path on that system
+* Copy the config.json file from that directory into ~/.config/powerline/
+* Change the coloreschema for vim to solarized
+
+
 pip install pyflakes
 
 
